@@ -1,7 +1,8 @@
-###GraphiQl Storm
+### GraphiQl Storm
+
 A GraphQl Web IDE
 
-####Usage:
+#### Usage
 install graphiql-storm
 ```bash
 npm i graphiql-storm

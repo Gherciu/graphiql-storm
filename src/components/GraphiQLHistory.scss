@@ -1,0 +1,98 @@
+.graphiql-history{
+    position: relative;
+    .dropdown-container{
+        box-sizing: border-box;
+        position: absolute;
+        left:0;
+        top:30px;
+        z-index: 999;
+        color:#fafafa;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        background: #172B3A;
+        padding:10px 0px;
+        max-height: 400px;
+        min-width: 250px;
+        max-width: 250px;
+        width: 250px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: none;
+        &.active{
+            display: block;
+        }
+        .empty{
+            padding: 10px 40px;
+            text-align: center;
+            width: 100%;
+            color: #9FA6AB;
+            box-sizing: border-box;
+        }
+        .item-container{
+            padding: 15px;
+            white-space: nowrap;
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            cursor: pointer;
+            .item-preview{
+                display: none;
+            }
+            &:hover{
+                background: rgb(26, 51, 70);
+                .item-preview{
+                    max-height: 400px;
+                    min-width: 250px;
+                    max-width: 400px;
+                    overflow: hidden auto;
+                    position: fixed;
+                    z-index: 99999;
+                    display: block;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                    background: #172B3A;
+                    left:100px;
+                    padding:10px 15px;
+                    pre{
+                        width: 100%;
+                        padding:0px 10px; 
+                        box-sizing: border-box;
+                        color:#61D9EF;
+                    }
+                }
+            }
+            &.active{
+                background: rgb(26, 51, 70);
+            }
+            .item{
+                min-width: 100%;
+                box-sizing: border-box; 
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .close-item{
+                    width: 30px;
+                    height: 30px;
+                    position: relative;
+                    cursor: pointer;
+                    &:after, &:before{
+                        width: 15px;
+                        height: 1px;
+                        background: #fff;
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left:50%;
+                        transform: translate(-50%,-50%);
+                    }
+                    &:before{
+                        transform: rotate(45deg);
+                    }
+                    &:after{
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

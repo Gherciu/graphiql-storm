@@ -1,0 +1,54 @@
+.graphiql-settings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height:30px;
+    width:30px;
+    margin-left: 20px;
+    position: relative;
+    svg{
+        width:100%;
+        height:100%;
+    }
+    .dropdown-container{
+        box-sizing: border-box;
+        position: absolute;
+        right:0;
+        top:30px;
+        z-index: 999;
+        color:#fafafa;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        background: #172B3A;
+        padding:10px 0px;
+        .item{
+            padding: 15px;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            input{
+                margin: 0;
+                margin-left: 10px;
+                outline: none;
+                max-height: 12px;
+                &[type="number"]{
+                    background: #fafafa;
+                    color:#172B3A;
+                    border:none;
+                    max-width: 40px;
+                    margin-left: 20px;
+                    padding-left: 18px;
+
+                }
+            }
+            &:hover{
+                background: rgb(26, 51, 70);
+            }
+        }
+    }
+}

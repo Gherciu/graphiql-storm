@@ -1,0 +1,54 @@
+.graphiql-search{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 5px;
+    position: relative;
+    input{
+        max-width: 100%;
+        width:100%;
+        border:none;
+        background: #0F202D;
+        padding-left: 15px;
+        height: 30px;
+        color:#eaeaea !important;
+        outline:none;
+        border-radius:5px;
+        box-sizing: border-box;
+        &.active{
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+    }
+    .search-dropdown-container{
+        box-sizing: border-box;
+        width:100%;
+        position: absolute;
+        top:27px;
+        left:0px;
+        right:0px;
+        padding:0px 5px;
+        z-index: 999;
+        .search-dropdown{
+            background: #0F202D;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            padding: 20px 0px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            .search-dropdown-item{
+                color:#eaeaea !important;
+                padding:15px 20px;
+                cursor: pointer;
+                &:hover{
+                    background: rgb(13, 36, 53);
+                }
+                &.active{
+                    background: rgb(13, 36, 53); 
+                }
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,92 @@
+.graphiql-tabs-bar{
+    width: 100%;
+    height:55px;
+    background: #0F202D;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    .graphiql-tab-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height:42px;
+        *{
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .graphiql-tab-item-add{
+            font-weight: bold;
+            height: 100%;
+            width: 42px;
+            background: #0B1924;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius:5px 5px 0px 0px;
+            cursor: pointer;
+            &:hover{
+                background: #172B3A; 
+            }
+        }
+        .graphiql-tab-item-content {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height:100%;
+            margin-right: 10px;
+            background: #0B1924;
+            border-radius:0px 5px 0px 0px;
+            &.active{
+                background: #172B3A; 
+                .graphiql-tab-item-title{
+                    background: #172B3A; 
+                }
+            }
+            &:hover{
+                background: #172B3A; 
+                .graphiql-tab-item-title{
+                    background: #172B3A; 
+                }
+            }
+            .graphiql-tab-item-title{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                background: #0B1924;
+                color: rgba(255, 255, 255, 0.6);
+                min-width:100px;
+                max-width: 130px;
+                border:none;
+                outline:none;
+                height:100%;
+                padding:0px 15px;
+                font-size: 12px;
+            }
+            .graphiql-tab-item-close{
+                position: relative;
+                cursor: pointer;
+                height: 100%;
+                width: 30px;
+                &:after,&:before{
+                    cursor: pointer;
+                    background: rgba(255, 255, 255, 0.6);
+                    width: 10px;
+                    height:2px;
+                    content: '';
+                    position: absolute;
+                    top:50%;
+                    right:50%;
+                    transform: translate(-50%,-50%);
+                    transform-origin: center;
+                }
+                &:before{
+                  transform: rotate(45deg);
+                }
+                &:after{
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

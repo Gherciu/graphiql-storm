@@ -1,6 +1,6 @@
 ### GraphiQl Storm
 
-A GraphQl Web IDE
+A GraphQl Web IDE [DEMO](https://www.google.com)
 
 #### Usage
 ```bash

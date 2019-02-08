@@ -21,7 +21,7 @@ your index.html
     <title>GraphiQl Storm</title>
   </head>
   <body>
-    <script src='/index.js'></script>
+    <script src='index.js'></script>
   </body>
 </html>
 ```

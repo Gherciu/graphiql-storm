@@ -12,7 +12,7 @@ your index.js
 ```js
 import renderGraphiQlStorm from 'graphiql-storm'
 
-renderGraphiQlStorm([{route:'http://localhost:2626/graphql'}])
+renderGraphiQlStorm([{route:'https://countries.trevorblades.com/'}])
 ```
 your index.html 
 ```html

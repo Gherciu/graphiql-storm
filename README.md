@@ -2,7 +2,7 @@
 
 A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 
-![GraphiQl Storm](/src/demo.png)
+![GraphiQl Storm](https://github.com/Gherciu/graphiql-storm/blob/master/src/demo.png?raw=true)
 
 #### Usage
 ```bash

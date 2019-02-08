@@ -16,12 +16,15 @@ renderGraphiQlStorm([{route:'http://localhost:2626/graphql'}])
 ```
 your index.html 
 ```html
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>GraphiQl Storm</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GraphiQl Storm</title>
   </head>
   <body>
-    <script src='index.js'></script>
+      <script src='index.js'></script>
   </body>
 </html>
 ```

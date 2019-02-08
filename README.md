@@ -2,6 +2,8 @@
 
 A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 
+![GraphiQl Storm](/src/demo.png)
+
 #### Usage
 ```bash
 npm i graphiql-storm

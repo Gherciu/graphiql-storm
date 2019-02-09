@@ -19,18 +19,18 @@ body {
         font-family: Arial;
         /* width */
         &::-webkit-scrollbar {
-            width: 6px;
+            width: 9px;
         }
         
         /* Track */
         &::-webkit-scrollbar-track {
-            border-radius: 5px;
+            border-radius: 9px;
         }
         
         /* Handle */
         &::-webkit-scrollbar-thumb {
             background: #0B1924;
-            border-radius: 5px;
+            border-radius: 9px;
         }
         
         /* Handle on hover */

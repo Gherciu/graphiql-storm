@@ -7,6 +7,7 @@ import GraphiQlSettings from './GraphiQlSettings.jsx'
 import GraphiQlWorkspaceManage from './GraphiQlWorkspaceManage.jsx'
 import {AppContext} from './App.jsx'
 import GraphiQlHistory from './GraphiQlHistory.jsx'
+import GraphiQlFooter from './GraphiQlFooter.jsx'
 import toast from './../helpers/toast.jsx'
 
 import 'graphiql/graphiql.css'
@@ -126,6 +127,9 @@ const GraphiQlTab = ({activeTab,endpoints})=>{
                     <GraphiQlWorkspaceManage />
                     <GraphiQlSettings />
                 </GraphiQL.Toolbar>
+                <GraphiQL.Footer>
+                    <GraphiQlFooter activeTab={activeTab}/>
+                </GraphiQL.Footer>
             </GraphiQL>
         </div>
     )

@@ -14,6 +14,8 @@ import renderGraphiQlStorm from 'graphiql-storm'
 
 renderGraphiQlStorm([{route:'https://countries.trevorblades.com/'}])
 ```
+bundle this file with webpack ```webpack index.js  -o bundle.index.js```
+
 your index.html 
 ```html
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ your index.html
       <title>GraphiQl Storm</title>
   </head>
   <body>
-      <script src='index.js'></script>
+      <script src='bundle.index.js'></script>
   </body>
 </html>
 ```

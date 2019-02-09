@@ -8,7 +8,7 @@ A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 ```bash
 npm i graphiql-storm
 ```
-your index.js
+####your index.js
 ```js
 import renderGraphiQlStorm from 'graphiql-storm'
 
@@ -16,7 +16,7 @@ renderGraphiQlStorm([{route:'https://countries.trevorblades.com/'}])
 ```
 bundle this file with webpack ```webpack index.js  -o bundle.index.js```
 
-your index.html 
+####your index.html 
 ```html
 <!DOCTYPE html>
 <html lang="en">

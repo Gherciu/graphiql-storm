@@ -182,6 +182,62 @@ const reducer = (state = initialState, action) => {
             }
             return newState
         }
+        case 'ADD_TAB_HEADER':{
+            let newStateTabs = [...state.tabs]
+            newStateTabs = newStateTabs.map((item,index)=>{
+                if(item.id === action.payload){
+                    if(item.headers){//compatibilyti with old versions of localstorage workspaces
+                        return {...item,headers:[...item.headers,{id:new Date().getTime(),name:'Name...',value:'Value...'}]}
+                    }else{
+                        return {...item,headers:[{id:new Date().getTime(),name:'',value:''}]}
+                    }
+                }
+                return item
+            })
+            let newState = {...state,tabs:[...newStateTabs]}
+            if(state.settings.syncWithLocalstorage){
+                registerLocalStorageNoBackendValues(newState)
+            }
+            return newState
+        }
+        case 'REMOVE_ITEM_FROM_TAB_HEADERS':{
+            let newStateTabs = [...state.tabs]
+            newStateTabs = newStateTabs.map((item,index)=>{
+                if(item.id === action.payload){
+                    let newItem = {...item}
+                    newItem.headers = newItem.headers.filter((item)=>item.id!==action.headerId)
+                    return newItem
+                }
+                return item
+            })
+            let newState = {...state,tabs:[...newStateTabs]}
+            if(state.settings.syncWithLocalstorage){
+                registerLocalStorageNoBackendValues(newState)
+            }
+            return newState
+        }
+        case 'CHANGE_TAB_HEADER_VALUES':{
+            let newStateTabs = [...state.tabs]
+            newStateTabs = newStateTabs.map((item,index)=>{
+                if(item.id === action.payload){
+                    let newItem = {...item}
+                    newItem.headers = newItem.headers.map((header)=>{
+                        let newHeader = {...header}
+                        if(header.id === action.headerId){
+                            newHeader[action.keyName] = action.value
+                        }
+                        return newHeader
+                    })
+                    return newItem
+                }
+                return item
+            })
+            let newState = {...state,tabs:[...newStateTabs]}
+            if(state.settings.syncWithLocalstorage){
+                registerLocalStorageNoBackendValues(newState)
+            }
+            return newState
+        }
         default:
             return state
     }

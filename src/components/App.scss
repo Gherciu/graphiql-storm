@@ -14,6 +14,7 @@ body {
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        min-width: 1000px;
     }
     *{
         font-family: Arial;

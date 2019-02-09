@@ -102,7 +102,7 @@ const GraphiQlTab = ({activeTab,endpoints})=>{
     return(
         <div className='graphiql graphiql-tab'>
             <GraphiQL 
-                fetcher={graphQLFetcher(activeTab.route || window.location.href,beforeFetch,afterFetch,onErrorFetch)}  
+                fetcher={graphQLFetcher(activeTab.route || window.location.href,activeTab.headers || [],beforeFetch,afterFetch,onErrorFetch)}  
                 onEditQuery={(e)=>dispatch({type:'CHANGE_TAB_QUERY',payload:activeTab.id,value:e})}
                 onEditVariables={(e)=>dispatch({type:'CHANGE_TAB_VARIABLES',payload:activeTab.id,value:e})}
                 editorTheme={activeTab.theme || 'dracula'}

@@ -189,7 +189,7 @@ const reducer = (state = initialState, action) => {
                     if(item.headers){//compatibilyti with old versions of localstorage workspaces
                         return {...item,headers:[...item.headers,{id:new Date().getTime(),name:'Name...',value:'Value...'}]}
                     }else{
-                        return {...item,headers:[{id:new Date().getTime(),name:'',value:''}]}
+                        return {...item,headers:[{id:new Date().getTime(),name:'Name...',value:'Value...'}]}
                     }
                 }
                 return item

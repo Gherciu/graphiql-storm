@@ -38,17 +38,30 @@ body {
             background: #0B1924; 
         }
     }
-    .toast{
+    #toast-container{
         position: fixed;
         z-index: 999;
-        left:30px;
-        bottom: 40px;
-        padding:20px;
-        background: #172B3A;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-        color:#fff;
-        &.info{
-            color:#fafafa;
+        top:0px;
+        left:0px;
+        max-width: 500px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-left: 20px;
+        .toast{
+            &:last-of-type{
+                margin-bottom: 40px;
+            }
+            margin-top: 10px;
+            max-width: 500px;
+            padding:20px;
+            background: #172B3A;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            color:#fff;
+            &.info{
+                color:#fafafa;
+            }
         }
     }
 }

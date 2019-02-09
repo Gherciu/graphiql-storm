@@ -41,10 +41,9 @@ body {
     #toast-container{
         position: fixed;
         z-index: 999;
-        top:0px;
+        bottom:0px;
         left:0px;
         max-width: 500px;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;

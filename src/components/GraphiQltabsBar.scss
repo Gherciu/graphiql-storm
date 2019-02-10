@@ -10,6 +10,7 @@
         align-items: center;
         justify-content: space-between;
         height:42px;
+        position: relative;
         *{
             color: rgba(255, 255, 255, 0.6);
         }
@@ -37,6 +38,21 @@
             margin-right: 10px;
             background: #0B1924;
             border-radius:0px 5px 0px 0px;
+            position: relative;
+            .emoji-container{
+                background: #172B3A;
+                z-index: 99999;
+                position: absolute;
+                top:40px;
+                left: 0px;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 5px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                span{
+                    cursor: pointer;
+                }
+            }
             &.active{
                 background: #172B3A; 
                 .graphiql-tab-item-title{

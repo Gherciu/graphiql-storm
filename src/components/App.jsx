@@ -38,6 +38,14 @@ const reducer = (state = initialState, action) => {
             if(state.settings.syncWithLocalstorage){
                 registerLocalStorageNoBackendValues(newState)
             }
+            newState.tabs.forEach((item,index)=>{//focus tab input if name not selected
+                if(item.active && !item.title){
+                  //wait to place tab on dom
+                  setTimeout(()=>{
+                      document.getElementById(`tabName${item.id}`).focus()
+                  },200)
+                }
+            })
             return newState
         }
         case 'REMOVE_TAB':{

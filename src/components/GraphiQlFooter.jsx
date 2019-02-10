@@ -6,6 +6,7 @@ import './GraphiQlFooter.scss'
 const GraphiQlFooter = ({activeTab})=>{
     const {state,dispatch} = useContext(AppContext)
     return(
+        <>
             <div  className='graphiql-footer' >
                 <div className="graphiql-footer-tabs">
                    <div className="item">
@@ -26,7 +27,6 @@ const GraphiQlFooter = ({activeTab})=>{
                                     </div>
                                  </div>
                             )}
-                             <div className="add-tab-header" onClick={()=>dispatch({type:'ADD_TAB_HEADER',payload:activeTab.id})}>+</div>
 
                             {(!activeTab.headers || activeTab.headers.length===0) &&
                              <div className="empty">No Headers!</div>
@@ -35,6 +35,10 @@ const GraphiQlFooter = ({activeTab})=>{
                     }
                 </div>
             </div>
+            {(!activeTab.footerTabActive || activeTab.footerTabActive === 1) &&
+                <div className="add-tab-header" onClick={()=>dispatch({type:'ADD_TAB_HEADER',payload:activeTab.id})}>+</div>
+            }
+            </>
     )
 }
 export default GraphiQlFooter

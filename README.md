@@ -13,11 +13,9 @@ npm i graphiql-storm
 
   graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
 ```
-bundle this file with webpack ```webpack index.js  -o bundle.index.js```
-
 #### OR use cdn:
 ```html
-  <script src='https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.3/dist/index.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.4/dist/index.js'></script>
   <script>
       graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
   </script>

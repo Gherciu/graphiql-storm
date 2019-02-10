@@ -1,6 +1,6 @@
 {
   "name": "graphiql-storm",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A graphQl Web IDE",
   "keywords": ["graphql","graphiql","graphiql-storm","web-storm","ide","web ide","graph"],
   "main": "dist/index.js",

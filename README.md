@@ -8,27 +8,19 @@ A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 ```bash
 npm i graphiql-storm
 ```
-#### your index.js
 ```js
-import renderGraphiQlStorm from 'graphiql-storm'
+  import graphiQlStorm from 'graphiql-storm'
 
-renderGraphiQlStorm([{route:'https://countries.trevorblades.com/'}])
+  graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
 ```
 bundle this file with webpack ```webpack index.js  -o bundle.index.js```
 
-#### your index.html 
+#### OR use cdn:
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>GraphiQl Storm</title>
-  </head>
-  <body>
-      <script src='bundle.index.js'></script>
-  </body>
-</html>
+  <script src='https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.3/dist/index.js'></script>
+  <script>
+      graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
+  </script>
 ```
 
 #### If you like this repository star⭐ and watch👀 on  [GitHub](https://github.com/Gherciu/graphiql-storm)

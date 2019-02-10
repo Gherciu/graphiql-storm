@@ -1,3 +1,3 @@
-import renderGraphiQlStorm from './../dist/index' // OR --> 'graphiql-storm'
+import graphiQlStorm from './../dist/index' // OR --> 'graphiql-storm'
 
-renderGraphiQlStorm([{route:'https://countries.trevorblades.com/'}])
+graphiQlStorm([{route:'https://countries.trevorblades.com/'}])

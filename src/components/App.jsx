@@ -1,6 +1,6 @@
 import React,{useReducer,useEffect} from 'react'
 import GraphiQlTab from './GraphiQlTab.jsx'
-import registerLocalStorageNoBackendValues from './../helpers/registerLocalStorageNoBackendValues.jsx'
+import registerLocalStorageValues from './../helpers/registerLocalStorageValues.jsx'
 import GraphiQlTabsBar from './GraphiQlTabsBar.jsx'
 
 import './App.scss'
@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_INITIAL_STATE':{
             let newState = action.payload
-            registerLocalStorageNoBackendValues(newState)
+            registerLocalStorageValues(newState)
             return newState
         }
         case 'ADD_TAB':{
@@ -36,7 +36,7 @@ const reducer = (state = initialState, action) => {
                 newState = {...state,tabs:[...newStateTabs,{id:new Date().getTime(),...defaultTabValues}]}
             }
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             newState.tabs.forEach((item,index)=>{//focus tab input if name not selected
                 if(item.active && !item.title){
@@ -65,7 +65,7 @@ const reducer = (state = initialState, action) => {
             }
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -80,7 +80,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -94,7 +94,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -108,7 +108,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -122,7 +122,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -136,7 +136,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -150,19 +150,19 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
         case 'STOP_SYNC_WITH_LOCALSTORAGE':{
            let newState = {...state,settings:{...state.settings,syncWithLocalstorage:!state.settings.syncWithLocalstorage}}
-           registerLocalStorageNoBackendValues(newState)
+           registerLocalStorageValues(newState)
            return  newState
         }
         case 'CHANGE_HISTORY_MAX_ITEMS':{
             let newState = {...state,settings:{...state.settings,maxItemsInHistory:action.payload}}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return  newState
         }
@@ -175,7 +175,7 @@ const reducer = (state = initialState, action) => {
                 newState.history = [{...action.payload},...newState.history]
             }
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -186,7 +186,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,history:[...newStateHistory]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -204,7 +204,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -220,7 +220,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }
@@ -242,7 +242,7 @@ const reducer = (state = initialState, action) => {
             })
             let newState = {...state,tabs:[...newStateTabs]}
             if(state.settings.syncWithLocalstorage){
-                registerLocalStorageNoBackendValues(newState)
+                registerLocalStorageValues(newState)
             }
             return newState
         }

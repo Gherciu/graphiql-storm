@@ -30,3 +30,5 @@ bundle this file with webpack ```webpack index.js  -o bundle.index.js```
   </body>
 </html>
 ```
+
+#### If you like this repository star⭐ and watch👀 on  [GitHub](https://github.com/Gherciu/graphiql-storm)

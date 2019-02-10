@@ -1,7 +1,8 @@
 {
   "name": "graphiql-storm",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A graphQl Web IDE",
+  "keywords": ["graphql","graphiql","graphiql-storm","web-storm","ide","web ide","graph"],
   "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress",

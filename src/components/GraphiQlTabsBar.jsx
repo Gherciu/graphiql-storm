@@ -1,7 +1,7 @@
-import React,{useContext,useState} from 'react'
-import {AppContext} from './App.jsx'
+import React, { useContext, useState } from 'react';
+import { AppContext } from './App.jsx';
+import './GraphiQlTabsBar.scss';
 
-import './GraphiQlTabsBar.scss'
 
 const emojis = [
     '😁','😂','😃','😄','😅','😆','😉','😊','😋','😌','😍','😏','😒','😓','😔','😖','😘','😚','😱','😴','😎',
@@ -22,8 +22,21 @@ const GraphiQlTabsBar = ({})=>{
     return(
         <div className='graphiql-tabs-bar'>
            {items.map((item,index)=>
-            <div key={item.id} className="graphiql-tab-item">
-                <div className={`graphiql-tab-item-content ${item.active?'active':''}`}>
+            <div key={item.id} className="graphiql-tab-item" >
+                
+                <div className={`graphiql-tab-item-content ${item.active?'active':''}`} style={{position:'relative'}}>
+                    {item.listening &&
+                        <div style={{
+                            width:10,
+                            height:10,
+                            background:'red',
+                            position:'absolute',
+                            top:-5,
+                            right:-5,
+                            zIndex:999999,
+                            borderRadius:'50%'
+                        }}></div>
+                    }
                     {item.active ?
                         <input onFocus={focusInput} onBlur={blurInput} id={`tabName${item.id}`} title='Click to change tab name'  className="graphiql-tab-item-title" type="text" onChange={(e)=>dispatch({type:'CHANGE_TAB_TITLE',payload:item.id,title:e.target.value})} placeholder={item.title || 'New tab'} value={item.title || ''} />
                         :

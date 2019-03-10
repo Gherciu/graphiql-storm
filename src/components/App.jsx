@@ -1,9 +1,9 @@
-import React,{useReducer,useEffect} from 'react'
-import GraphiQlTab from './GraphiQlTab.jsx'
-import registerLocalStorageValues from './../helpers/registerLocalStorageValues.jsx'
-import GraphiQlTabsBar from './GraphiQlTabsBar.jsx'
+import React, { useEffect, useReducer } from 'react';
+import registerLocalStorageValues from './../helpers/registerLocalStorageValues.jsx';
+import './App.scss';
+import GraphiQlTab from './GraphiQlTab.jsx';
+import GraphiQlTabsBar from './GraphiQlTabsBar.jsx';
 
-import './App.scss'
 
 let defaultTabValues = {active:true}
 const initialState = {
@@ -140,6 +140,20 @@ const reducer = (state = initialState, action) => {
             }
             return newState
         }
+        case 'LISTENING_TAB':{
+            let newStateTabs = [...state.tabs]
+            newStateTabs = newStateTabs.map((item,index)=>{
+                if(item.id === action.payload){
+                    return {...item,listening:action.value}
+                }
+                return item
+            })
+            let newState = {...state,tabs:[...newStateTabs]}
+            if(state.settings.syncWithLocalstorage){
+                registerLocalStorageValues(newState)
+            }
+            return newState
+        }
         case 'CHANGE_TAB_ROUTE':{
             let newStateTabs = [...state.tabs]
             newStateTabs = newStateTabs.map((item,index)=>{
@@ -257,7 +271,11 @@ const App = ({endpoints})=>{
     useEffect(()=>{
         defaultTabValues = {...defaultTabValues,route:endpoints[0].route}
         if(localStorage.getItem('__noBackend')){
-           dispatch({type:'SET_INITIAL_STATE',payload:JSON.parse(localStorage.getItem('__noBackend'))})
+            let iState = JSON.parse(localStorage.getItem('__noBackend'))
+            iState.tabs = iState.tabs.map((i)=>{
+                return {...i,listening:false}
+            })
+           dispatch({type:'SET_INITIAL_STATE',payload:iState})
         }else{
            dispatch({type:'SET_INITIAL_STATE',payload:{...initialState,tabs:[{id:new Date().getTime(),...defaultTabValues}]}})
         }

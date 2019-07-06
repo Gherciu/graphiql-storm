@@ -31,7 +31,7 @@ npm i graphiql-storm
 
 ## Author
 
-**@Gherciu/react-p5** © [GHERCIU](https://github.com/Gherciu), Released under the [MIT](./LICENSE) License.<br>
+**@Gherciu/graphiql-storm** © [GHERCIU](https://github.com/Gherciu), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by GHERCIU with help from contributors ([list](https://github.com/Gherciu/graphiql-storm/contributors)).
 
 > [github.com/Gherciu](https://github.com/Gherciu) · GitHub [@GHERCIU](https://github.com/Gherciu)

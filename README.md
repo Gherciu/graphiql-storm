@@ -5,24 +5,29 @@ A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 ![GraphiQl Storm](https://github.com/Gherciu/graphiql-storm/blob/master/src/demo.png?raw=true)
 
 #### Usage
+
 ```html
-  <!--index.html-->
-  <script src='https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.5/dist/index.js'></script>
-  <script>
-      graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
-  </script>
+<!--index.html-->
+<script src="https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.7/dist/index.js"></script>
+<script>
+  graphiQlStorm([{ route: 'https://countries.trevorblades.com/' }]);
+</script>
 ```
+
 **Or via npm**
+
 ```bash
 npm i graphiql-storm
 ```
-```js
-  // index.js
-  import graphiQlStorm from 'graphiql-storm'
 
-  graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
+```js
+// index.js
+import graphiQlStorm from 'graphiql-storm';
+
+graphiQlStorm([{ route: 'https://countries.trevorblades.com/' }]);
 ```
-do not forgot to bundle this file with webpack `webpack index.js  -o bundle.index.js` and then include the `index.bundle.js` in your `index.html`
+
+do not forgot to bundle this file with webpack `webpack index.js -o index.bundle.js` and then include the `index.bundle.js` in your `index.html`
 
 ## Contributing
 

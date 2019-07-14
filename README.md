@@ -5,10 +5,6 @@ A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 ![GraphiQl Storm](https://github.com/Gherciu/graphiql-storm/blob/master/src/demo.png?raw=true)
 
 #### Usage
-```bash
-npm i graphiql-storm
-```
-
 ```html
   <!--index.html-->
   <script src='https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.5/dist/index.js'></script>
@@ -16,7 +12,10 @@ npm i graphiql-storm
       graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
   </script>
 ```
-**OR**
+**Or via npm**
+```bash
+npm i graphiql-storm
+```
 ```js
   // index.js
   import graphiQlStorm from 'graphiql-storm'

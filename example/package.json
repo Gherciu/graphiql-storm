@@ -9,6 +9,6 @@
   "author": "Gherciu Gheorghe",
   "license": "MIT",
   "dependencies": {
-    "graphiql-storm": "^1.1.4"
+    "graphiql-storm": "^1.1.9"
   }
 }

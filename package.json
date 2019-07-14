@@ -1,6 +1,6 @@
 {
   "name": "graphiql-storm",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "A graphQl Web IDE",
   "keywords": [
     "graphql",
@@ -17,7 +17,7 @@
   },
   "main": "dist/index.js",
   "scripts": {
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress",
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --progress",
     "watch": "./node_modules/.bin/webpack --watch",
     "watch:example": "./node_modules/.bin/webpack ./example/index.js  -o ./example/index.bundle.js -w"
   },
@@ -36,10 +36,11 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "ignore-loader": "^0.1.2",
-    "sass-loader": "^7.1.0",
     "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"

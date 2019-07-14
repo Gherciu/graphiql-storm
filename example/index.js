@@ -1,3 +1,3 @@
 import graphiQlStorm from "graphiql-storm";
 
-graphiQlStorm([{ route: "ttps://countries.trevorblades.com/" }]);
+graphiQlStorm([{ route: "https://countries.trevorblades.com/" }]);

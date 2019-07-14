@@ -1,3 +1,3 @@
-import graphiQlStorm from "./../dist/index"; // OR --> 'graphiql-storm'
+import graphiQlStorm from "graphiql-storm";
 
 graphiQlStorm([{ route: "http:localhost:3001" }]);

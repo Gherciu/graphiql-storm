@@ -8,18 +8,22 @@ A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 ```bash
 npm i graphiql-storm
 ```
-```js
-  import graphiQlStorm from 'graphiql-storm'
 
-  graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
-```
-#### OR use cdn:
 ```html
+  <!--index.html-->
   <script src='https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.5/dist/index.js'></script>
   <script>
       graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
   </script>
 ```
+**OR**
+```js
+  // index.js
+  import graphiQlStorm from 'graphiql-storm'
+
+  graphiQlStorm([{route:'https://countries.trevorblades.com/'}])
+```
+do not forgot to bundle this file with webpack `webpack index.js  -o bundle.index.js` and then include the `index.bundle.js` in your `index.html`
 
 ## Contributing
 

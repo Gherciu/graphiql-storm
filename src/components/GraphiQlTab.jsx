@@ -1,55 +1,21 @@
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { ApolloClient } from 'apollo-client';
-import { split } from 'apollo-link';
-import { HttpLink } from 'apollo-link-http';
-import { WebSocketLink } from "apollo-link-ws";
-import { getMainDefinition } from 'apollo-utilities';
-import GraphiQL from 'graphiql';
-import 'graphiql/graphiql.css';
-import { parse, print } from 'graphql';
-import React, { useContext, useRef } from 'react';
-import { ApolloConsumer, ApolloProvider } from 'react-apollo';
-import graphQLFetcher from './../helpers/graphQlFetcher.jsx';
-import toast from './../helpers/toast.jsx';
-import { AppContext } from './App.jsx';
-import GraphiQlFooter from './GraphiQlFooter.jsx';
-import GraphiQlHistory from './GraphiQlHistory.jsx';
-import GraphiQlSearch from './GraphiQlSearch.jsx';
-import GraphiQlSettings from './GraphiQlSettings.jsx';
-import './GraphiQlTab.scss';
-import GraphiQlWorkspaceManage from './GraphiQlWorkspaceManage.jsx';
+import React,{useRef,useContext,Component} from 'react'
+import GraphiQL from 'graphiql'
+import { parse, print } from 'graphql'
+import graphQLFetcher from './../helpers/graphQlFetcher.jsx'
+import GraphiQlSearch from './GraphiQlSearch.jsx'
+import GraphiQlSettings from './GraphiQlSettings.jsx'
+import GraphiQlWorkspaceManage from './GraphiQlWorkspaceManage.jsx'
+import {AppContext} from './App.jsx'
+import GraphiQlHistory from './GraphiQlHistory.jsx'
+import GraphiQlFooter from './GraphiQlFooter.jsx'
+import toast from './../helpers/toast.jsx'
+
+import 'graphiql/graphiql.css'
+import './GraphiQlTab.scss'
 
 let fetcherOnTick = null
 let ticks = 0
-const getApolloClient = (activeTab)=>{
-    //---------------------------apollo client setup 
-    const cache = new InMemoryCache();
-    const httpLink =  new HttpLink({
-        uri: activeTab.route
-    });
-    const wsLink =new WebSocketLink({
-        uri:activeTab.route.replace("http","ws").replace("https","ws"),
-        reconnect: true
-    });
-    // using the ability to split links, you can send data to each link
-    // depending on what kind of operation is being sent
-    const link = split(
-        // split based on operation type
-        ({ query }) => {
-        const { kind, operation } = getMainDefinition(query);
-        return kind === 'OperationDefinition' && operation === 'subscription';
-        },
-        wsLink,
-        httpLink,
-    );
-    return new ApolloClient({
-        link,
-        cache
-    });
-    //--------------------------end apollo client setup
-}
 const GraphiQlTab = ({activeTab,endpoints})=>{
-
     const {state,dispatch} = useContext(AppContext)
     let graphiqlEditorRef = useRef(null)
 
@@ -133,48 +99,39 @@ const GraphiQlTab = ({activeTab,endpoints})=>{
             });
         }
     }
-    //loader for subscriptions (necesar on each render)
-    // if()
-    //////////////////////////
     return(
-        <ApolloProvider client={getApolloClient(activeTab)}>
-            <ApolloConsumer>
-                {(apolloClient)=>(
-                <div className='graphiql graphiql-tab'>
-                    <GraphiQL 
-                        fetcher={graphQLFetcher(activeTab.route || window.location.href,activeTab.headers || [],beforeFetch,afterFetch,onErrorFetch,apolloClient,activeTab,dispatch,state)}  
-                        onEditQuery={(e)=>dispatch({type:'CHANGE_TAB_QUERY',payload:activeTab.id,value:e})}
-                        onEditVariables={(e)=>dispatch({type:'CHANGE_TAB_VARIABLES',payload:activeTab.id,value:e})}
-                        editorTheme={activeTab.theme || 'dracula'}
-                        ref={ref =>graphiqlEditorRef = ref}     
-                        defaultQuery={activeTab.query || ''}
-                        query={activeTab.query || ''}
-                        response={activeTab.response || ''}
-                        variables={activeTab.variables || ''}
-                    >
-                        <GraphiQL.Logo> <></> </GraphiQL.Logo>
-                        <GraphiQL.Toolbar>
-                            <GraphiQL.Button
-                                onClick={prettifySchema}
-                                label="Prettify"
-                            />
-                            <GraphiQlHistory activeTab={activeTab} />
-                            <GraphiQlSearch activeTab={activeTab} endpoints={endpoints || []}/>
-                            <GraphiQL.Button
-                                onClick={()=>copyCURL()}
-                                label="Copy CURL"
-                            />
-                            <GraphiQlWorkspaceManage />
-                            <GraphiQlSettings />
-                        </GraphiQL.Toolbar>
-                        <GraphiQL.Footer>
-                            <GraphiQlFooter activeTab={activeTab}/>
-                        </GraphiQL.Footer>
-                    </GraphiQL>
-                </div>
-                )}
-            </ApolloConsumer>
-        </ApolloProvider>
+        <div className='graphiql graphiql-tab'>
+            <GraphiQL 
+                fetcher={graphQLFetcher(activeTab.route || window.location.href,activeTab.headers || [],beforeFetch,afterFetch,onErrorFetch)}  
+                onEditQuery={(e)=>dispatch({type:'CHANGE_TAB_QUERY',payload:activeTab.id,value:e})}
+                onEditVariables={(e)=>dispatch({type:'CHANGE_TAB_VARIABLES',payload:activeTab.id,value:e})}
+                editorTheme={activeTab.theme || 'dracula'}
+                ref={ref =>graphiqlEditorRef = ref}     
+                defaultQuery={activeTab.query || '# Write your query or mutation here'}
+                query={activeTab.query || '# Write your query or mutation here'}
+                response={activeTab.response || ''}
+                variables={activeTab.variables || ''}
+            >
+                <GraphiQL.Logo> <></> </GraphiQL.Logo>
+                <GraphiQL.Toolbar>
+                    <GraphiQL.Button
+                        onClick={prettifySchema}
+                        label="Prettify"
+                    />
+                    <GraphiQlHistory activeTab={activeTab} />
+                    <GraphiQlSearch activeTab={activeTab} endpoints={endpoints || []}/>
+                    <GraphiQL.Button
+                        onClick={()=>copyCURL()}
+                        label="Copy CURL"
+                    />
+                    <GraphiQlWorkspaceManage />
+                    <GraphiQlSettings />
+                </GraphiQL.Toolbar>
+                <GraphiQL.Footer>
+                    <GraphiQlFooter activeTab={activeTab}/>
+                </GraphiQL.Footer>
+            </GraphiQL>
+        </div>
     )
 }
 export default GraphiQlTab

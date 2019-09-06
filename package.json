@@ -21,7 +21,11 @@
     "watch": "./node_modules/.bin/webpack --watch",
     "watch:example": "./node_modules/.bin/webpack ./example/index.js  -o ./example/index.bundle.js -w"
   },
-  "author": "Gherciu Gheorghe",
+  "author": {
+		"name": "Gherciu Gheorghe",
+		"email": "gherciu553@gmail.com",
+		"url": "https://gherciu.github.io/portfolio/"
+	},
   "license": "ISC",
   "dependencies": {
     "graphiql": "^0.10.0",

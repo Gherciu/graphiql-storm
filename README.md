@@ -39,7 +39,7 @@ do not forgot to bundle this file with webpack `webpack index.js -o index.bundle
 
 ## Author
 
-**@Gherciu/graphiql-storm** © [GHERCIU](https://github.com/Gherciu), Released under the [MIT](./LICENSE) License.<br>
+**@Gherciu/graphiql-storm** © [GHERCIU](https://github.com/Gherciu), Released under the [MIT](https://github.com/Gherciu/graphiql-storm/blob/master/LICENSE) License.<br>
 Authored and maintained by GHERCIU with help from contributors ([list](https://github.com/Gherciu/graphiql-storm/contributors)).
 
 #### If you like this repository star⭐ and watch👀 on [GitHub](https://github.com/Gherciu/graphiql-storm)

@@ -8,7 +8,7 @@ A GraphQl Web IDE [DEMO](https://gherciu.github.io/graphiql-storm/)
 
 ```html
 <!--index.html-->
-<script src="https://cdn.jsdelivr.net/npm/graphiql-storm@1.1.9/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/graphiql-storm@latest/dist/index.js"></script>
 <script>
   graphiQlStorm([{ route: 'https://countries.trevorblades.com/' }]);
 </script>

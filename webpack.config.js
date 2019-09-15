@@ -9,7 +9,8 @@ module.exports = {
     library: 'graphiQlStorm',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   module: {
     rules: [

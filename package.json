@@ -1,6 +1,6 @@
 {
   "name": "graphiql-storm",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "A graphQl Web IDE",
   "keywords": [
     "graphql",
@@ -22,10 +22,10 @@
     "watch:example": "./node_modules/.bin/webpack ./example/index.js  -o ./example/index.bundle.js -w"
   },
   "author": {
-		"name": "Gherciu Gheorghe",
-		"email": "gherciu553@gmail.com",
-		"url": "https://gherciu.github.io/portfolio/"
-	},
+    "name": "Gherciu Gheorghe",
+    "email": "gherciu553@gmail.com",
+    "url": "https://gherciu.github.io/portfolio/"
+  },
   "license": "ISC",
   "dependencies": {
     "graphiql": "^0.10.0",

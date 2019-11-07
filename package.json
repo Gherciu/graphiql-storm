@@ -1,6 +1,6 @@
 {
   "name": "graphiql-storm",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A graphQl Web IDE",
   "keywords": [
     "graphql",
@@ -12,7 +12,7 @@
     "graph"
   ],
   "repository": {
-    "url": "Gherciu/graphiql-storm",
+    "url": "https://github.com/Gherciu/graphiql-storm",
     "type": "git"
   },
   "main": "dist/index.js",
@@ -26,15 +26,23 @@
     "email": "gherciu553@gmail.com",
     "url": "https://gherciu.github.io/portfolio/"
   },
-  "license": "ISC",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "graphiql": "^0.10.0",
     "graphql": "^14.0.2",
+    "husky": "^3.0.9",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",

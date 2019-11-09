@@ -9,13 +9,10 @@
 
 #### Features
 
-💾 Export/Import workspaces
-
-✨ Autocompletion & error highlighting
-
-📚 Interactive, multi-column docs
-
-⚙ Multiple Tabs & Endpoints
+- 💾 Export/Import workspaces
+- ✨ Autocompletion & error highlighting
+- 📚 Interactive, multi-column docs
+- ⚙ Multiple Tabs & Endpoints
 
 #### Usage
 

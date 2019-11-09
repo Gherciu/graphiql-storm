@@ -7,6 +7,16 @@
 
 ![GraphiQl Storm](https://github.com/Gherciu/graphiql-storm/blob/master/src/demo.png?raw=true)
 
+#### Features
+
+💾 Export/Import workspaces
+
+✨ Autocompletion & error highlighting
+
+📚 Interactive, multi-column docs
+
+⚙ Multiple Tabs & Endpoints
+
 #### Usage
 
 ```html

@@ -69,7 +69,7 @@ const GraphiQlTab = ({activeTab,endpoints})=>{
             dispatch({type:'ADD_TO_HISTORY',payload:{...activeTab,id:new Date().getTime()}})
         }
         if(response.errors){
-            dispatch({type:'CHANGE_TAB_RESPONSE',payload:activeTab.id,value:JSON.stringify(response,null,2)}) 
+            dispatch({type:'CHANGE_TAB_RESPONSE',payload:activeTab.id,value:JSON.stringify(response,null,2)})
         }
     }
 
@@ -101,14 +101,14 @@ const GraphiQlTab = ({activeTab,endpoints})=>{
     }
     return(
         <div className='graphiql graphiql-tab'>
-            <GraphiQL 
-                fetcher={graphQLFetcher(activeTab.route || window.location.href,activeTab.headers || [],beforeFetch,afterFetch,onErrorFetch)}  
+            <GraphiQL
+                fetcher={graphQLFetcher(activeTab.route || window.location.href,activeTab.headers || [],beforeFetch,afterFetch,onErrorFetch)}
                 onEditQuery={(e)=>dispatch({type:'CHANGE_TAB_QUERY',payload:activeTab.id,value:e})}
                 onEditVariables={(e)=>dispatch({type:'CHANGE_TAB_VARIABLES',payload:activeTab.id,value:e})}
                 editorTheme={activeTab.theme || 'dracula'}
-                ref={ref =>graphiqlEditorRef = ref}     
-                defaultQuery={activeTab.query || '# Write your query or mutation here'}
-                query={activeTab.query || '# Write your query or mutation here'}
+                ref={ref =>graphiqlEditorRef = ref}
+                defaultQuery={activeTab.query || ''}
+                query={activeTab.query || ''}
                 response={activeTab.response || ''}
                 variables={activeTab.variables || ''}
             >

@@ -1,6 +1,6 @@
 {
   "name": "graphiql-storm",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A graphQl Web IDE",
   "keywords": [
     "graphql",
@@ -38,7 +38,8 @@
     "husky": "^3.0.9",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.8.0-alpha.1",
-    "react-dom": "^16.8.0-alpha.1"
+    "react-dom": "^16.8.0-alpha.1",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",

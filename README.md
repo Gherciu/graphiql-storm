@@ -2,7 +2,7 @@
   <img width="200" height="200"
     src="https://raw.githubusercontent.com/Gherciu/graphiql-storm/master/logo.png">
   <h1>GraphiQl Storm</h1>
-  <p>A GraphQl Web IDE <a href="https://gherciu.github.io/graphiql-storm/" alt="graphiql-storm">DEMO</a>.</p>
+  <p>A GraphQl Web IDE. <a href="https://gherciu.github.io/graphiql-storm/" alt="graphiql-storm">DEMO</a>.</p>
 </div>
 
 ![GraphiQl Storm](https://github.com/Gherciu/graphiql-storm/blob/master/src/demo.png?raw=true)
@@ -20,7 +20,7 @@
 <!--index.html-->
 <script src="https://cdn.jsdelivr.net/npm/graphiql-storm@latest/dist/index.js"></script>
 <script>
-  graphiQlStorm([{ route: 'https://countries.trevorblades.com/' }])
+  graphiQlStorm([{ route: "https://countries.trevorblades.com/" }]);
 </script>
 ```
 
@@ -32,9 +32,9 @@ npm i graphiql-storm
 
 ```js
 // index.js
-import graphiQlStorm from 'graphiql-storm'
+import graphiQlStorm from "graphiql-storm";
 
-graphiQlStorm([{ route: 'https://countries.trevorblades.com/' }])
+graphiQlStorm([{ route: "https://countries.trevorblades.com/" }]);
 ```
 
 do not forgot to bundle this file with webpack `webpack index.js -o index.bundle.js` and then include the `index.bundle.js` in your `index.html`

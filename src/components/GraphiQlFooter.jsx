@@ -38,7 +38,7 @@ const GraphiQlFooter = ({activeTab})=>{
                   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous" />
                 </Helmet>
                 <div className='social-media--links'>
-                  <div className={`social-media--wrapper ${activeTab.headers.length>0 ? 'with-headers' : ''}`}>
+                  <div className={`social-media--wrapper ${(activeTab && activeTab.headers && activeTab.headers.length > 0) ? 'with-headers' : ''}`}>
                     <a
                       target='_blank'
                       href='https://github.com/Gherciu/graphiql-storm'

@@ -47,6 +47,9 @@ do not forgot to bundle this file with webpack `webpack index.js -o index.bundle
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+#### Or contribute to this project via [Open Collective](https://opencollective.com/graphiql-storm/)
+![Open Collective](https://opencollective.com/graphiql-storm/tiers/backer.svg?avatarHeight=36)
+
 ## Author
 
 **[@Gherciu/graphiql-storm](https://github.com/Gherciu/graphiql-storm)** © [GHERCIU](https://github.com/Gherciu), Released under the [MIT](https://github.com/Gherciu/graphiql-storm/blob/master/LICENSE) License.<br>

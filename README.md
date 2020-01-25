@@ -48,7 +48,7 @@ do not forgot to bundle this file with webpack `webpack index.js -o index.bundle
 5. Submit a pull request :D
 
 #### Or you can sponsor via [Open Collective](https://opencollective.com/graphiql-storm/)
-[![Open Collective](https://opencollective.com/graphiql-storm/tiers/sponsor.svg)](https://opencollective.com/graphiql-storm/)
+[![Open Collective](https://opencollective.com/graphiql-storm/tiers/sponsor.svg?avatarHeight=40)](https://opencollective.com/graphiql-storm/)
 
 ## Author
 

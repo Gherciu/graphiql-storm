@@ -48,7 +48,7 @@ do not forgot to bundle this file with webpack `webpack index.js -o index.bundle
 5. Submit a pull request :D
 
 #### Or contribute to this project via [Open Collective](https://opencollective.com/graphiql-storm/)
-![Open Collective](https://opencollective.com/graphiql-storm/tiers/backer.svg?avatarHeight=36)
+[![Open Collective](https://opencollective.com/graphiql-storm/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/graphiql-storm/)
 
 ## Author
 
